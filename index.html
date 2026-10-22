@@ -2,74 +2,191 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0f172a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>ToolHub by Nexus | Industrial Tools South Africa</title>
+  <meta name="description" content="ToolHub by Nexus Equipment Group – Industrial tools, power tools, pneumatic, welding and storage equipment sourced across South Africa.">
+  <title>ToolHub by Nexus | Industrial Equipment Sourcing South Africa</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <div class="logo-icon">N</div>
-      <div>
-        <h1>ToolHub</h1>
-        <p>by Nexus Equipment Group</p>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">N</div>
+        <div>
+          <div class="logo-text">ToolHub</div>
+          <div class="logo-sub">by Nexus Equipment Group</div>
+        </div>
       </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
     </div>
   </header>
 
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#catalogue">Browse Equipment</a>
+    <a href="#how">How Sourcing Works</a>
+    <a href="#quote">Request Quote</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <main>
+    <!-- Hero -->
     <section class="hero">
-      <h2>Industrial Tools & Equipment</h2>
-      <p>Sourced and supplied across South Africa. Serving workshops, factories, mines and contractors.</p>
-    </section>
-
-    <div class="categories">
-      <button class="cat-btn active" data-category="all">All</button>
-      <button class="cat-btn" data-category="manual">Manual</button>
-      <button class="cat-btn" data-category="power">Power</button>
-      <button class="cat-btn" data-category="pneumatic">Pneumatic</button>
-      <button class="cat-btn" data-category="welding">Welding</button>
-      <button class="cat-btn" data-category="storage">Storage</button>
-      <button class="cat-btn" data-category="industrial">Industrial</button>
-    </div>
-
-    <div class="products" id="products"></div>
-
-    <!-- Company Details Section -->
-    <section class="company-section">
-      <h2>About Nexus Equipment Group</h2>
-      <p>We supply quality manual tools, power tools, pneumatic equipment, welding machines, compressors, tool storage and industrial equipment across South Africa.</p>
-      
-      <div class="company-grid">
-        <div class="company-card">
-          <h3>Contact</h3>
-          <p>WhatsApp: 064 244 8154</p>
-          <p>Email: info@nexusequipmentgroup.co.za</p>
-        </div>
-        <div class="company-card">
-          <h3>Banking Details</h3>
-          <p>Bank: FNB</p>
-          <p>Account Name: Nexus Equipment Group</p>
-          <p>Account Type: Business</p>
-        </div>
-        <div class="company-card">
-          <h3>We Supply</h3>
-          <p>Workshops • Factories • Mines<br>Contractors • Engineering Firms<br>Government & Private Sector</p>
+      <div class="container">
+        <h1>Industrial Equipment<br>Sourced to Order</h1>
+        <p class="hero-lead">We source quality manual tools, power tools, pneumatic equipment, welding machines, compressors and storage solutions for workshops, factories, mines and contractors across South Africa.</p>
+        <div class="hero-actions">
+          <a href="#catalogue" class="btn btn-primary">Browse Equipment</a>
+          <a href="#quote" class="btn btn-secondary">Request Free Quote</a>
         </div>
       </div>
+    </section>
 
-      <a href="https://wa.me/27642448154?text=Hi%20Nexus%2C%20I%20would%20like%20to%20discuss%20supplying%20tools%20for%20our%20company" class="big-whatsapp" target="_blank">
-        Request Bulk Quote / Account
-      </a>
+    <div class="trust-bar">
+      <div class="container trust-items">
+        <span>Free Quotations</span>
+        <span>•</span>
+        <span>Sourced to Your Specs</span>
+        <span>•</span>
+        <span>South Africa Wide</span>
+      </div>
+    </div>
+
+    <!-- Catalogue -->
+    <section class="section" id="catalogue">
+      <div class="container">
+        <div class="section-header">
+          <h2>Equipment Catalogue</h2>
+          <p>Browse popular categories. Need something not listed? Request a custom quote below.</p>
+        </div>
+
+        <div class="search-wrap">
+          <input type="search" id="searchInput" placeholder="Search equipment..." class="search-input">
+        </div>
+
+        <div class="categories" id="categories">
+          <button class="cat-btn active" data-category="all">All</button>
+          <button class="cat-btn" data-category="manual">Manual Tools</button>
+          <button class="cat-btn" data-category="power">Power Tools</button>
+          <button class="cat-btn" data-category="pneumatic">Pneumatic</button>
+          <button class="cat-btn" data-category="welding">Welding</button>
+          <button class="cat-btn" data-category="storage">Storage</button>
+          <button class="cat-btn" data-category="industrial">Industrial</button>
+        </div>
+
+        <div class="products-grid" id="products"></div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section-alt" id="how">
+      <div class="container">
+        <div class="section-header">
+          <h2>How Equipment Sourcing Works</h2>
+          <p>We source equipment to meet your exact requirements.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Tell us what you need</h3>
+            <p>Send product names, quantities, specifications or a photo of the equipment you require.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>We source & quote</h3>
+            <p>We obtain competitive supplier quotations and send you a clear, free quotation.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>You decide</h3>
+            <p>Accept the quote and we arrange supply and delivery to your site or workshop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="section" id="quote">
+      <div class="container">
+        <div class="section-header">
+          <h2>Request a Free Quotation</h2>
+          <p>Describe the equipment you need. Choose WhatsApp or Email to send your request.</p>
+        </div>
+
+        <form id="quoteForm" class="quote-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="qName" required placeholder="Full name">
+            </div>
+            <div class="form-group">
+              <label>Company (optional)</label>
+              <input type="text" id="qCompany" placeholder="Company name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone / WhatsApp *</label>
+              <input type="tel" id="qPhone" required placeholder="064 000 0000">
+            </div>
+            <div class="form-group">
+              <label>Email (optional)</label>
+              <input type="email" id="qEmail" placeholder="you@company.co.za">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Delivery Location</label>
+            <input type="text" id="qLocation" placeholder="City / Town / Site">
+          </div>
+
+          <div class="form-group">
+            <label>What do you need? *</label>
+            <textarea id="qDetails" required rows="5" placeholder="List the tools or equipment, quantities, brands or specifications if known..."></textarea>
+          </div>
+
+          <p class="form-note">Quotations are completely free. No obligation.</p>
+
+          <div class="form-actions">
+            <button type="button" id="sendWhatsApp" class="btn btn-whatsapp btn-full">Send via WhatsApp</button>
+            <button type="button" id="sendEmail" class="btn btn-primary btn-full">Send via Email</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Nexus</h2>
+        </div>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <h3>WhatsApp</h3>
+            <p>064 244 8154</p>
+            <a href="https://wa.me/27642448154" class="btn btn-whatsapp" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+          <div class="contact-card">
+            <h3>Email</h3>
+            <p>nexusequipmentgroup@gmail.com</p>
+            <a href="mailto:nexusequipmentgroup@gmail.com" class="btn btn-secondary">Send Email</a>
+          </div>
+        </div>
+        <p class="privacy-note">We only use your contact details to respond to your enquiry. We do not share your information.</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 Nexus Equipment Group • ToolHub</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">ToolHub by Nexus Equipment Group</div>
+      <p>Industrial equipment sourcing • South Africa</p>
+      <p class="footer-copy">© 2026 Nexus Equipment Group. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="app.js"></script>
