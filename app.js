@@ -1,22 +1,169 @@
 const products = [
-  { id: 1, name: "Professional Claw Hammer 16oz", category: "manual", description: "Heavy-duty steel claw hammer with comfortable grip. Suitable for construction and general workshop use.", image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" },
-  { id: 2, name: "Adjustable Wrench Set 3-Piece", category: "manual", description: "Chrome vanadium steel adjustable wrenches in 6\", 8\" and 10\" sizes.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
-  { id: 3, name: "Screwdriver Set 12-Piece", category: "manual", description: "Precision and standard screwdrivers with magnetic tips. Ideal for electrical and mechanical work.", image: "https://images.unsplash.com/photo-1581092160607-ee67e4bf6d8a?w=800&h=500&fit=crop" },
-  { id: 4, name: "Cordless Drill Driver 18V", category: "power", description: "Brushless motor, 2-speed gearbox and LED light. Battery and charger options available.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 5, name: "Angle Grinder 125mm", category: "power", description: "850W+ angle grinder for cutting and grinding. Side handle and guard included.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
-  { id: 6, name: "Circular Saw 1400W", category: "power", description: "Powerful circular saw for timber and board cutting. Depth and bevel adjustment.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 7, name: "Air Compressor 50L", category: "pneumatic", description: "2.5HP oil-lubricated compressor suitable for spray guns, impact tools and general workshop use.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 8, name: "Pneumatic Impact Wrench 1/2\"", category: "pneumatic", description: "High-torque air impact wrench for automotive and industrial fastening.", image: "https://images.unsplash.com/photo-1615906658996-066c4f8d2c0e?w=800&h=500&fit=crop" },
-  { id: 9, name: "HVLP Spray Gun Kit", category: "pneumatic", description: "Professional spray gun with cups and accessories for painting and coating applications.", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop" },
-  { id: 10, name: "Inverter Arc Welder 200A", category: "welding", description: "Lightweight MMA/ARC inverter welder suitable for workshop and site work.", image: "https://images.unsplash.com/photo-1504328343528-c827ceaeea25?w=800&h=500&fit=crop" },
-  { id: 11, name: "MIG Welder 250A", category: "welding", description: "Industrial MIG welding machine with wire feeder for fabrication and production.", image: "https://images.unsplash.com/photo-1581094794329-adee35d815b7?w=800&h=500&fit=crop" },
-  { id: 12, name: "Welding Helmet Auto-Darkening", category: "welding", description: "Auto-darkening welding helmet with adjustable shade for ARC, MIG and TIG.", image: "https://images.unsplash.com/photo-1504328343528-c827ceaeea25?w=800&h=500&fit=crop" },
-  { id: 13, name: "Heavy Duty Tool Box (Empty)", category: "storage", description: "Steel tool box with compartments and strong handles. Empty version for custom loading.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
-  { id: 14, name: "Loaded Tool Kit Set", category: "storage", description: "Complete tool box filled with essential hand tools. Ready for workshop or site use.", image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" },
-  { id: 15, name: "Rolling Tool Cabinet", category: "storage", description: "Heavy-duty multi-drawer tool cabinet with casters. Ideal for workshops and factories.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 16, name: "Hydraulic Floor Jack 3-Ton", category: "industrial", description: "Low-profile hydraulic jack suitable for cars, bakkies and light commercial vehicles.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 17, name: "150-Piece Socket Set", category: "industrial", description: "Professional metric and imperial socket set in heavy-duty case.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 18, name: "Engine Crane / Shop Crane", category: "industrial", description: "Hydraulic engine crane for workshop lifting and engine removal.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" }
+  // MANUAL TOOLS
+  { 
+    id: 1, 
+    name: "Stanley FatMax Claw Hammer 16oz", 
+    category: "manual", 
+    description: "Fibreglass handle • Magnetic nail starter • Soft grip. Ideal for construction and general use.", 
+    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 2, 
+    name: "Gedore Adjustable Wrench Set (6\", 8\", 10\")", 
+    category: "manual", 
+    description: "Chrome vanadium steel • Precision engineered • 3-piece set. Professional grade.", 
+    image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 3, 
+    name: "Wera Kraftform Screwdriver Set 12-Piece", 
+    category: "manual", 
+    description: "Magnetic tips • Ergonomic handles • Includes flat, Phillips and Pozidriv. German quality.", 
+    image: "https://images.unsplash.com/photo-1581092160607-ee67e4bf6d8a?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 4, 
+    name: "Knipex Cobra Water Pump Pliers 250mm", 
+    category: "manual", 
+    description: "Self-locking • High leverage • Grey atramentized finish. Excellent for pipes and fittings.", 
+    image: "https://images.unsplash.com/photo-1581092160607-ee67e4bf6d8a?w=800&h=500&fit=crop" 
+  },
+
+  // POWER TOOLS
+  { 
+    id: 5, 
+    name: "Makita 18V Brushless Drill Driver (DDF484)", 
+    category: "power", 
+    description: "Brushless motor • 54Nm torque • 2-speed gearbox • LED light. Body only or kit options available.", 
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 6, 
+    name: "Bosch GWS 750-125 Angle Grinder 125mm", 
+    category: "power", 
+    description: "750W motor • 11,000 rpm • Side handle & guard included. Suitable for cutting and grinding metal.", 
+    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 7, 
+    name: "DeWalt DWE560 Circular Saw 184mm", 
+    category: "power", 
+    description: "1350W • 5500 rpm • 65mm cut depth • Bevel capacity 48°. Ideal for timber and board work.", 
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 8, 
+    name: "Makita HR2470 Rotary Hammer SDS-Plus", 
+    category: "power", 
+    description: "780W • 2.4 Joules • 3-mode (drilling, hammer drilling, chiselling). Excellent for concrete.", 
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" 
+  },
+
+  // PNEUMATIC / COMPRESSORS
+  { 
+    id: 9, 
+    name: "Fini Air Compressor 50 Litre 2.5HP", 
+    category: "pneumatic", 
+    description: "50L tank • 2.5HP motor • 8 bar max pressure • 200 L/min free air delivery. Suitable for spray guns and impact tools.", 
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 10, 
+    name: "Fini Air Compressor 100 Litre 3HP", 
+    category: "pneumatic", 
+    description: "100L tank • 3HP motor • 10 bar max pressure • Higher duty cycle for workshop use.", 
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 11, 
+    name: "Fini Air Compressor 200 Litre 5.5HP", 
+    category: "pneumatic", 
+    description: "200L tank • 5.5HP motor • 11 bar • Ideal for production workshops and multiple operators.", 
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 12, 
+    name: "Ingersoll Rand 1/2\" Pneumatic Impact Wrench", 
+    category: "pneumatic", 
+    description: "High torque (up to 610Nm) • Lightweight composite body • Suitable for automotive and industrial use.", 
+    image: "https://images.unsplash.com/photo-1615906658996-066c4f8d2c0e?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 13, 
+    name: "Sagola 4600 Xtreme HVLP Spray Gun", 
+    category: "pneumatic", 
+    description: "Professional HVLP spray gun • Excellent atomisation • Suitable for basecoat, clearcoat and primers.", 
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop" 
+  },
+
+  // WELDING
+  { 
+    id: 14, 
+    name: "ESAB Buddy Arc 200 Inverter Welder", 
+    category: "welding", 
+    description: "200A MMA/ARC • Lightweight • Generator friendly • Ideal for site and workshop work.", 
+    image: "https://images.unsplash.com/photo-1504328343528-c827ceaeea25?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 15, 
+    name: "Lincoln Electric MIG 250 Welder", 
+    category: "welding", 
+    description: "250A MIG/MAG • Industrial duty • Suitable for fabrication and production environments.", 
+    image: "https://images.unsplash.com/photo-1581094794329-adee35d815b7?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 16, 
+    name: "3M Speedglas Auto-Darkening Welding Helmet", 
+    category: "welding", 
+    description: "Auto-darkening filter • Adjustable shade 8-13 • Suitable for ARC, MIG and TIG welding.", 
+    image: "https://images.unsplash.com/photo-1504328343528-c827ceaeea25?w=800&h=500&fit=crop" 
+  },
+
+  // STORAGE
+  { 
+    id: 17, 
+    name: "Beta Tools Empty Tool Box (C38)", 
+    category: "storage", 
+    description: "Heavy-duty steel tool box • Multiple compartments • Strong handles. Empty version.", 
+    image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 18, 
+    name: "Facom Fully Loaded Tool Kit", 
+    category: "storage", 
+    description: "Complete professional tool kit in robust case. Includes sockets, spanners, screwdrivers and pliers.", 
+    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 19, 
+    name: "Beta Rolling Tool Cabinet 7-Drawer", 
+    category: "storage", 
+    description: "Heavy-duty rolling cabinet • 7 drawers • Ball-bearing slides • Suitable for workshops and factories.", 
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" 
+  },
+
+  // INDUSTRIAL
+  { 
+    id: 20, 
+    name: "Werther Hydraulic Floor Jack 3-Ton", 
+    category: "industrial", 
+    description: "3-ton capacity • Low profile • Suitable for cars, bakkies and light commercial vehicles.", 
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 21, 
+    name: "Gedore 150-Piece Socket Set", 
+    category: "industrial", 
+    description: "Metric & imperial • 1/4\", 3/8\" and 1/2\" drives • Heavy-duty case. Professional quality.", 
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" 
+  },
+  { 
+    id: 22, 
+    name: "Werther Engine Crane 1-Ton", 
+    category: "industrial", 
+    description: "Hydraulic engine crane • Foldable legs • Suitable for engine removal and workshop lifting.", 
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" 
+  }
 ];
 
 const whatsappNumber = "27642448154";
@@ -56,7 +203,6 @@ function renderProducts(filter = "all", search = "") {
     </article>
   `}).join("");
 
-  // Add event listeners to buttons
   document.querySelectorAll(".add-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const id = parseInt(btn.dataset.id);
@@ -76,7 +222,6 @@ function toggleItem(id) {
   }
 
   updateQuoteBar();
-  // Re-render to update button states
   const activeCat = document.querySelector(".cat-btn.active")?.dataset.category || "all";
   const search = document.getElementById("searchInput").value;
   renderProducts(activeCat, search);
@@ -94,7 +239,6 @@ function updateQuoteBar() {
   }
 }
 
-// Category filter
 document.querySelectorAll(".cat-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
@@ -104,22 +248,19 @@ document.querySelectorAll(".cat-btn").forEach(btn => {
   });
 });
 
-// Search
 document.getElementById("searchInput").addEventListener("input", (e) => {
   const active = document.querySelector(".cat-btn.active");
   const cat = active ? active.dataset.category : "all";
   renderProducts(cat, e.target.value);
 });
 
-// Mobile menu
 document.getElementById("menuBtn").addEventListener("click", () => {
   document.getElementById("mobileNav").classList.toggle("open");
 });
 
-// Open modal
 document.getElementById("openQuoteModal").addEventListener("click", () => {
   const listEl = document.getElementById("selectedList");
-  const customText = document.getElementById("customDetails").value.trim();
+  const customText = document.getElementById("customDetails")?.value.trim() || "";
 
   let html = "<strong>Selected Equipment:</strong><ul>";
   selectedItems.forEach(item => {
@@ -135,19 +276,17 @@ document.getElementById("openQuoteModal").addEventListener("click", () => {
   document.getElementById("quoteModal").classList.add("open");
 });
 
-// Close modal
 document.getElementById("closeModal").addEventListener("click", () => {
   document.getElementById("quoteModal").classList.remove("open");
 });
 
-// Build final message
 function buildMessage() {
   const name = document.getElementById("qName").value.trim();
   const company = document.getElementById("qCompany").value.trim();
   const phone = document.getElementById("qPhone").value.trim();
   const email = document.getElementById("qEmail").value.trim();
   const location = document.getElementById("qLocation").value.trim();
-  const custom = document.getElementById("customDetails").value.trim();
+  const custom = document.getElementById("customDetails")?.value.trim() || "";
 
   let message = `NEW QUOTATION REQUEST - ToolHub\n\n`;
   message += `Name: ${name}\n`;
@@ -169,7 +308,6 @@ function buildMessage() {
   return message;
 }
 
-// Validation
 function validateForm() {
   const name = document.getElementById("qName").value.trim();
   const phone = document.getElementById("qPhone").value.trim();
@@ -177,14 +315,13 @@ function validateForm() {
     alert("Please fill in your Name and Phone number.");
     return false;
   }
-  if (selectedItems.length === 0 && !document.getElementById("customDetails").value.trim()) {
+  if (selectedItems.length === 0 && !(document.getElementById("customDetails")?.value.trim())) {
     alert("Please add at least one item or describe what you need.");
     return false;
   }
   return true;
 }
 
-// WhatsApp
 document.getElementById("sendWhatsApp").addEventListener("click", () => {
   if (!validateForm()) return;
   const message = buildMessage();
@@ -192,7 +329,6 @@ document.getElementById("sendWhatsApp").addEventListener("click", () => {
   window.open(url, "_blank");
 });
 
-// Email
 document.getElementById("sendEmail").addEventListener("click", () => {
   if (!validateForm()) return;
   const message = buildMessage();
@@ -201,5 +337,4 @@ document.getElementById("sendEmail").addEventListener("click", () => {
   window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
 });
 
-// Initial render
 renderProducts();
