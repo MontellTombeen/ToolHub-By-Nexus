@@ -5,45 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>ToolHub by Nexus</title>
+  <title>ToolHub by Nexus | Industrial Tools South Africa</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="logo">
-      <span class="logo-icon">🔧</span>
+      <div class="logo-icon">N</div>
       <div>
         <h1>ToolHub</h1>
-        <p>by Nexus</p>
+        <p>by Nexus Equipment Group</p>
       </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <h2>Quality Tools. Sourced in South Africa.</h2>
-      <p>Manual • Power • Industrial</p>
+      <h2>Industrial Tools & Equipment</h2>
+      <p>Sourced and supplied across South Africa. Serving workshops, factories, mines and contractors.</p>
     </section>
 
     <div class="categories">
       <button class="cat-btn active" data-category="all">All</button>
       <button class="cat-btn" data-category="manual">Manual</button>
       <button class="cat-btn" data-category="power">Power</button>
+      <button class="cat-btn" data-category="pneumatic">Pneumatic</button>
+      <button class="cat-btn" data-category="welding">Welding</button>
+      <button class="cat-btn" data-category="storage">Storage</button>
       <button class="cat-btn" data-category="industrial">Industrial</button>
     </div>
 
-    <div class="products" id="products">
-      <!-- Products will be loaded here -->
-    </div>
+    <div class="products" id="products"></div>
+
+    <!-- Company Details Section -->
+    <section class="company-section">
+      <h2>About Nexus Equipment Group</h2>
+      <p>We supply quality manual tools, power tools, pneumatic equipment, welding machines, compressors, tool storage and industrial equipment across South Africa.</p>
+      
+      <div class="company-grid">
+        <div class="company-card">
+          <h3>Contact</h3>
+          <p>WhatsApp: 064 244 8154</p>
+          <p>Email: info@nexusequipmentgroup.co.za</p>
+        </div>
+        <div class="company-card">
+          <h3>Banking Details</h3>
+          <p>Bank: FNB</p>
+          <p>Account Name: Nexus Equipment Group</p>
+          <p>Account Type: Business</p>
+        </div>
+        <div class="company-card">
+          <h3>We Supply</h3>
+          <p>Workshops • Factories • Mines<br>Contractors • Engineering Firms<br>Government & Private Sector</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/27642448154?text=Hi%20Nexus%2C%20I%20would%20like%20to%20discuss%20supplying%20tools%20for%20our%20company" class="big-whatsapp" target="_blank">
+        Request Bulk Quote / Account
+      </a>
+    </section>
   </main>
 
   <footer>
-    <p>ToolHub by Nexus Equipment Group</p>
-    <a href="https://wa.me/27642448154" class="whatsapp-btn">Chat on WhatsApp</a>
+    <p>© 2026 Nexus Equipment Group • ToolHub</p>
   </footer>
 
   <script src="app.js"></script>
