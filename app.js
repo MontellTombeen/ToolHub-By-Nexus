@@ -1,75 +1,60 @@
 const products = [
   // ==================== WINCHES & 4x4 ====================
-  { id: 101, name: "12V Winch EWK 8000U (1.6kW – 3620kg)", category: "winches", description: "12V electric winch • 1.6kW motor • 3620kg pulling capacity.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 102, name: "12V Winch EWG 8000U (2.7kW – 3620kg)", category: "winches", description: "Higher power 2.7kW motor • 3620kg capacity.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 103, name: "12V Winch EWX 10000U (4.3kW – 4536kg)", category: "winches", description: "4.3kW • 4536kg capacity • Suitable for larger 4x4s.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 104, name: "12V Winch EWX 12000U (4.5kW – 5440kg)", category: "winches", description: "4.5kW motor • 5440kg rated pull.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 105, name: "12V Winch EWP 12000U 2-Speed (5.4kW – 5443kg)", category: "winches", description: "2-speed gearbox • 5.4kW • 5443kg capacity.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 106, name: "Hydraulic Winch HWN 15000YD (6804kg)", category: "winches", description: "Hydraulic winch • 6804kg capacity • High duty cycle.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 107, name: "Mac Afric Synthetic Winch Line 12mm x 28m", category: "winches", description: "Synthetic rope kit • 12mm × 28m • 13734kg breaking strength.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 108, name: "High Lift Jack 1.52m (60 inch) 3000kg", category: "winches", description: "60-inch high lift jack • 3000kg capacity.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 109, name: "12V Air Compressor 90A / 300 L/min", category: "winches", description: "High-flow 12V compressor • 300 L/min • Fast tyre inflation.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 101, name: "12V Electric Winches (8000lb – 12000lb)", category: "winches", description: "Available brands: EWK, EWG, EWX, EWP series. Capacities from 3620kg to 5443kg. Single and 2-speed models.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 102, name: "Hydraulic Winches (up to 15000lb)", category: "winches", description: "Heavy-duty hydraulic winches. Brands: HWN, HWD, HWP series. High continuous duty cycle.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 103, name: "Synthetic Winch Ropes & Recovery Kits", category: "winches", description: "Mac Afric synthetic winch lines and recovery ropes. Multiple diameters and breaking strengths available.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 104, name: "High Lift Jacks & Recovery Tracks", category: "winches", description: "High lift jacks (48\" & 60\") and recovery tracks. Essential 4x4 recovery equipment.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 105, name: "12V Air Compressors for 4x4", category: "winches", description: "High-flow 12V compressors (up to 300 L/min). Suitable for rapid tyre inflation.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
 
   // ==================== LIFTING EQUIPMENT ====================
-  { id: 201, name: "Electric Hoist PA1000 – 1000kg / 5.5m (230V)", category: "lifting", description: "1000kg capacity • 5.5m lift • 230V electric hoist.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 202, name: "Electric Chain Hoist 1.5 Ton × 6m (380V)", category: "lifting", description: "Double chain • 1.5 ton • 6m lift • 380V.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 203, name: "Chain Block 1.5 Ton × 3m", category: "lifting", description: "Manual chain block • 1.5 ton • 3m lift height.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 204, name: "Lever Block 1.5 Ton × 1.5m", category: "lifting", description: "Compact lever hoist • 1.5 ton • 1.5m lift.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 205, name: "Manual Hydraulic Pallet Truck 2.5 Ton", category: "lifting", description: "2.5 ton pallet jack • Smooth rolling wheels.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 206, name: "1.5 Ton Mobile Gantry Crane", category: "lifting", description: "Adjustable height mobile gantry • 1.5 ton capacity.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 201, name: "Electric Hoists & Chain Hoists", category: "lifting", description: "230V and 380V electric hoists. Capacities from 250kg to 1.5 ton. Chain and wire rope options.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 202, name: "Manual Chain Blocks & Lever Blocks", category: "lifting", description: "Chain blocks and lever hoists from 0.75 ton to 4 ton. Reliable lifting for workshops and sites.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 203, name: "Pallet Trucks & Stackers", category: "lifting", description: "Manual hydraulic pallet trucks (1.5–2.5 ton) and hand pallet stackers.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 204, name: "Gantry Cranes & Beam Clamps", category: "lifting", description: "Mobile gantry cranes and beam clamps for flexible lifting solutions.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
 
   // ==================== AUTOMOTIVE & BATTERY ====================
-  { id: 301, name: "Intelligent Battery Charger 15 Amp (12V)", category: "automotive", description: "Smart 15A multi-stage charger for 12V batteries.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 302, name: "Professional Lithium Jump Starter 45000mAh", category: "automotive", description: "12V/24V lithium jump starter • 45000mAh capacity.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 303, name: "Mac Afric Jump Starter 800A Peak", category: "automotive", description: "800A peak / 400A starting current jump starter.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 304, name: "Battery Tester & Analyser (100–2000 CCA)", category: "automotive", description: "Tests battery health, CCA and charging system.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 301, name: "Intelligent Battery Chargers", category: "automotive", description: "Smart chargers from 1.5A to 25A. 12V and 12/24V models available.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 302, name: "Jump Starters & Boosters", category: "automotive", description: "Lithium and traditional jump starters. Peak currents up to 800A. 12V and 12/24V options.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 303, name: "Battery Testers & Analysers", category: "automotive", description: "Digital battery testers and analysers. CCA testing range 100–2000.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
 
   // ==================== GARAGE EQUIPMENT ====================
-  { id: 401, name: "Long Reach Trolley Jack 4 Ton", category: "garage", description: "4-ton long reach trolley jack for bakkies and light trucks.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 402, name: "Long Reach Trolley Jack 8 Ton", category: "garage", description: "Heavy-duty 8-ton long reach trolley jack.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 403, name: "Bottle Jack 20 Ton", category: "garage", description: "Compact 20-ton bottle jack.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 404, name: "Ratchet Jack Stands 6 Ton (Pair)", category: "garage", description: "6-ton jack stands sold per pair.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 405, name: "4 Ton 2-Post Vehicle Lift", category: "garage", description: "4-ton two-post electric/hydraulic lift.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 406, name: "Foldable Engine Crane", category: "garage", description: "Foldable engine crane with 6 wheels.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 407, name: "20-Ton Workshop Press with Gauge", category: "garage", description: "20-ton hydraulic workshop press with pressure gauge.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 408, name: "Pneumatic Tyre Changer LT 950A", category: "garage", description: "Professional tyre changer with helping arm.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 401, name: "Trolley Jacks & Bottle Jacks", category: "garage", description: "Long reach trolley jacks (2–11 ton) and bottle jacks up to 30 ton. Multiple brands available.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 402, name: "Jack Stands & Engine Cranes", category: "garage", description: "Ratchet jack stands (3–12 ton) and foldable engine cranes.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 403, name: "Vehicle Lifts (2-Post & 4-Post)", category: "garage", description: "4-ton 2-post lifts and 5-ton 4-post lifts. Electric/hydraulic options.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
+  { id: 404, name: "Workshop Presses", category: "garage", description: "Hydraulic and pneumatic workshop presses from 12 ton to 100 ton.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 405, name: "Tyre Changers & Wheel Balancers", category: "garage", description: "Pneumatic tyre changers and wheel balancers for professional workshops.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
 
   // ==================== GENERATORS & PUMPS ====================
-  { id: 501, name: "Petrol Generator 6.5kVA / 5kW", category: "generators", description: "6.5kVA petrol standby generator.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 502, name: "Diesel Generator 20kVA Silent + ATS", category: "generators", description: "20kVA silent diesel generator with Automatic Transfer Switch.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 503, name: "Inverter Generator 3.2kW", category: "generators", description: "Clean power 3.2kW inverter generator.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 504, name: "Petrol Water Pump 3 Inch (75mm)", category: "generators", description: "3-inch petrol water pump for irrigation and dewatering.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 505, name: "Diesel Water Pump 4 Inch (100mm)", category: "generators", description: "4-inch diesel water pump • Electric & recoil start.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 501, name: "Petrol Generators", category: "generators", description: "Petrol standby generators from 1.25kVA to 12.5kVA. Recoil and electric start options.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 502, name: "Diesel Generators (Silent + ATS)", category: "generators", description: "Silent diesel generators with Automatic Transfer Switch. 6.5kVA to 50kVA available.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 503, name: "Inverter Generators", category: "generators", description: "Clean power inverter generators from 1.8kW to 8kW.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 504, name: "Petrol & Diesel Water Pumps", category: "generators", description: "Water pumps from 2 inch to 4 inch. Petrol, diesel and high-pressure models available.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
 
   // ==================== POWER TOOLS ====================
-  { id: 601, name: "Makita 18V Brushless Drill Driver", category: "power", description: "Brushless motor • High torque cordless drill.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 602, name: "Kinway 20V Brushless Impact Wrench 1000Nm", category: "power", description: "20V brushless • 1000Nm torque impact wrench.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 603, name: "Mac Afric Angle Grinder 2200W 230mm", category: "power", description: "2200W • 230mm heavy-duty angle grinder.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
-  { id: 604, name: "Mac Afric 20V Cordless Drill Combo Kit", category: "power", description: "Includes 2 × 4.0Ah batteries and charger.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 605, name: "Bosch GWS 750-125 Angle Grinder 125mm", category: "power", description: "750W • 125mm angle grinder for cutting and grinding.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
-  { id: 606, name: "Mac Afric Angle Grinder 1100W 115mm", category: "power", description: "1100W • 115mm professional angle grinder.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
+  { id: 601, name: "Cordless Drills & Impact Drivers", category: "power", description: "Available brands: Makita, Kinway, Mac Afric. 18V and 20V brushless options.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 602, name: "Angle Grinders", category: "power", description: "Brands: Bosch, Mac Afric, Kinway. Sizes from 115mm to 230mm. 710W to 2200W.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
+  { id: 603, name: "Impact Wrenches", category: "power", description: "Cordless and pneumatic impact wrenches. Kinway 20V models up to 1000Nm available.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 604, name: "Circular Saws & Reciprocating Saws", category: "power", description: "Corded and cordless circular saws and recip saws from leading brands.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
 
   // ==================== PNEUMATIC / AIR TOOLS ====================
-  { id: 701, name: "Fini Air Compressor 50 Litre 2.5HP", category: "pneumatic", description: "50L tank • 2.5HP • 8 bar • Suitable for spray guns and impact tools.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 702, name: "Fini Air Compressor 100 Litre 3HP", category: "pneumatic", description: "100L tank • 3HP • Higher duty cycle for workshop use.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 703, name: "Fini Air Compressor 200 Litre 5.5HP", category: "pneumatic", description: "200L tank • 5.5HP • Ideal for production workshops.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 704, name: "Pneumatic Impact Wrench 1/2\"", category: "pneumatic", description: "High torque air impact wrench for automotive and industrial use.", image: "https://images.unsplash.com/photo-1615906658996-066c4f8d2c0e?w=800&h=500&fit=crop" },
-  { id: 705, name: "HVLP Spray Gun Kit", category: "pneumatic", description: "Professional HVLP spray gun with cups and accessories.", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop" },
-  { id: 706, name: "Air Die Grinder Kit 14 Piece", category: "pneumatic", description: "14-piece air die grinder kit for detailed work.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
+  { id: 701, name: "Air Compressors (50L – 200L)", category: "pneumatic", description: "Fini and other brands. 50L, 100L and 200L tanks. 2.5HP to 5.5HP motors.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 702, name: "Pneumatic Impact Wrenches & Ratchets", category: "pneumatic", description: "Air impact wrenches and ratchets for automotive and industrial use.", image: "https://images.unsplash.com/photo-1615906658996-066c4f8d2c0e?w=800&h=500&fit=crop" },
+  { id: 703, name: "Spray Guns (HVLP & LVLP)", category: "pneumatic", description: "Professional gravity feed spray guns. Multiple nozzle sizes available.", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop" },
+  { id: 704, name: "Air Die Grinders & Kits", category: "pneumatic", description: "Die grinder kits and individual air tools for fabrication and repair work.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
 
   // ==================== STORAGE ====================
-  { id: 801, name: "7-Drawer Professional Tool Cabinet", category: "storage", description: "Heavy-duty 7-drawer cabinet with ball-bearing slides.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 802, name: "Mac Afric 207-Piece Tool Cabinet", category: "storage", description: "Complete 207-piece tool set in 7-drawer heavy-duty cabinet.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 803, name: "Jobsite Toolbox 48 Inch", category: "storage", description: "Large durable 48-inch jobsite toolbox.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
+  { id: 801, name: "Tool Cabinets (7-Drawer & more)", category: "storage", description: "Professional tool cabinets. Brands: Mac Afric and others. 7-drawer and multi-drawer options.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 802, name: "Fully Loaded Tool Cabinets", category: "storage", description: "Complete tool sets in heavy-duty cabinets (204–207 piece sets available).", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 803, name: "Jobsite Toolboxes & Cantilever Boxes", category: "storage", description: "Large jobsite toolboxes and multi-tray cantilever toolboxes.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
 
   // ==================== HAND TOOLS ====================
-  { id: 901, name: "Torque Wrench 1/2\" 40–210Nm", category: "manual", description: "1/2 inch drive click-type torque wrench • 40–210Nm.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
-  { id: 902, name: "172-Piece Professional Socket Set", category: "manual", description: "1/4, 3/8 & 1/2 inch drives • Comprehensive set.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
-  { id: 903, name: "Metric Combination Spanner Set 19-Piece", category: "manual", description: "Chrome vanadium 19-piece metric combination spanner set.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
-  { id: 904, name: "Stanley FatMax Claw Hammer 16oz", category: "manual", description: "Fibreglass handle • Magnetic nail starter • Soft grip.", image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" }
+  { id: 901, name: "Torque Wrenches", category: "manual", description: "Click-type torque wrenches. 1/4\", 3/8\", 1/2\" and 3/4\" drives available.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
+  { id: 902, name: "Socket Sets", category: "manual", description: "Professional socket sets from 25 to 172 pieces. Multiple drive sizes.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 903, name: "Spanner Sets", category: "manual", description: "Metric and imperial combination spanner sets. Chrome vanadium steel.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
+  { id: 904, name: "Screwdrivers, Pliers & Hammers", category: "manual", description: "Brands: Stanley, Wera, Knipex, Gedore and Mac Afric. Full range of hand tools.", image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" }
 ];
 
-// ==================== APP LOGIC ====================
+// ==================== APP LOGIC (do not change) ====================
 const whatsappNumber = "27642448154";
 const emailAddress = "nexusequipmentgroup@gmail.com";
 
