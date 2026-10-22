@@ -32,7 +32,7 @@ const products = [
 
   // ==================== POWER TOOLS ====================
   { id: 601, name: "Cordless Drills & Impact Drivers", category: "power", description: "Available brands: Makita, Kinway, Mac Afric. 18V and 20V brushless options.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
-  { id: 602, name: "Angle Grinders", category: "power", description: "Brands: Bosch, Mac Afric, Kinway. Sizes from 115mm to 230mm. 710W to 2200W.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
+  { id: 602, name: "Angle Grinders", category: "power", description: "Brands: Bosch, Mac Afric, Kinway. Sizes from 115mm to 230mm. 710W to 2200W.", image: "https://images.unsplash.com/photo-1738162837369-a2beec3a1d47?w=800&h=500&fit=crop" },
   { id: 603, name: "Impact Wrenches", category: "power", description: "Cordless and pneumatic impact wrenches. Kinway 20V models up to 1000Nm available.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
   { id: 604, name: "Circular Saws & Reciprocating Saws", category: "power", description: "Corded and cordless circular saws and recip saws from leading brands.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
 
@@ -210,35 +210,22 @@ function validateForm() {
   return true;
 }
 
-// WhatsApp button
 document.getElementById("sendWhatsApp").addEventListener("click", () => {
   if (!validateForm()) return;
   const message = buildMessage();
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
 });
 
-// FIXED Email button
 document.getElementById("sendEmail").addEventListener("click", () => {
   if (!validateForm()) return;
-
   const message = buildMessage();
   const subject = "New Quotation Request – ToolHub";
-
-  // Try to open email app
   const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-  
-  // Create a temporary link and click it (more reliable on mobile)
   const link = document.createElement('a');
   link.href = mailtoLink;
-  link.target = '_blank';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-
-  // Fallback message
-  setTimeout(() => {
-    alert("If your email app did not open, the message has been prepared. You can also copy it manually and send it to:\n\nnexusequipmentgroup@gmail.com");
-  }, 1000);
 });
 
 renderProducts();
