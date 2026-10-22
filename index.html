@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ToolHub by Nexus</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🔧</span>
+      <div>
+        <h1>ToolHub</h1>
+        <p>by Nexus</p>
+      </div>
+    </div>
+  </header>
 
+  <main>
+    <section class="hero">
+      <h2>Quality Tools. Sourced in South Africa.</h2>
+      <p>Manual • Power • Industrial</p>
+    </section>
+
+    <div class="categories">
+      <button class="cat-btn active" data-category="all">All</button>
+      <button class="cat-btn" data-category="manual">Manual</button>
+      <button class="cat-btn" data-category="power">Power</button>
+      <button class="cat-btn" data-category="industrial">Industrial</button>
+    </div>
+
+    <div class="products" id="products">
+      <!-- Products will be loaded here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>ToolHub by Nexus Equipment Group</p>
+    <a href="https://wa.me/27642448154" class="whatsapp-btn">Chat on WhatsApp</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
