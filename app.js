@@ -22,6 +22,8 @@ const products = [
 const whatsappNumber = "27642448154";
 const emailAddress = "nexusequipmentgroup@gmail.com";
 
+let selectedItems = [];
+
 function renderProducts(filter = "all", search = "") {
   const container = document.getElementById("products");
   let list = filter === "all" ? products : products.filter(p => p.category === filter);
@@ -35,28 +37,61 @@ function renderProducts(filter = "all", search = "") {
   }
 
   if (list.length === 0) {
-    container.innerHTML = `<p style="text-align:center;color:#94a3b8;padding:40px 0;">No matching equipment found. <a href="#quote" style="color:#60a5fa;">Request a custom quote</a> instead.</p>`;
+    container.innerHTML = `<p style="text-align:center;color:#94a3b8;padding:40px 0;">No matching equipment found.</p>`;
     return;
   }
 
   container.innerHTML = list.map(p => {
-    const waText = encodeURIComponent(`Hi Nexus, I would like a quotation for:\n\n• ${p.name}\n\nPlease advise price and availability.`);
-    const emailSubject = encodeURIComponent(`Quotation Request – ${p.name}`);
-    const emailBody = encodeURIComponent(`Hi Nexus,\n\nI would like a quotation for the following item:\n\n• ${p.name}\n\nPlease advise price and availability.\n\nThank you.`);
-
+    const isAdded = selectedItems.some(item => item.id === p.id);
     return `
     <article class="product-card">
       <img src="${p.image}" alt="${p.name}" class="product-image" loading="lazy">
       <div class="product-body">
         <h3>${p.name}</h3>
         <p>${p.description}</p>
-        <div class="product-actions">
-          <a href="https://wa.me/${whatsappNumber}?text=${waText}" class="btn-sm btn-wa" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}" class="btn-sm btn-em">Email</a>
-        </div>
+        <button class="add-btn ${isAdded ? 'added' : ''}" data-id="${p.id}">
+          ${isAdded ? '✓ Added to Quote' : 'Add to Quote'}
+        </button>
       </div>
     </article>
   `}).join("");
+
+  // Add event listeners to buttons
+  document.querySelectorAll(".add-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = parseInt(btn.dataset.id);
+      toggleItem(id);
+    });
+  });
+}
+
+function toggleItem(id) {
+  const product = products.find(p => p.id === id);
+  const index = selectedItems.findIndex(item => item.id === id);
+
+  if (index > -1) {
+    selectedItems.splice(index, 1);
+  } else {
+    selectedItems.push(product);
+  }
+
+  updateQuoteBar();
+  // Re-render to update button states
+  const activeCat = document.querySelector(".cat-btn.active")?.dataset.category || "all";
+  const search = document.getElementById("searchInput").value;
+  renderProducts(activeCat, search);
+}
+
+function updateQuoteBar() {
+  const bar = document.getElementById("quoteBar");
+  const count = document.getElementById("itemCount");
+  count.textContent = selectedItems.length;
+
+  if (selectedItems.length > 0) {
+    bar.classList.add("show");
+  } else {
+    bar.classList.remove("show");
+  }
 }
 
 // Category filter
@@ -81,47 +116,86 @@ document.getElementById("menuBtn").addEventListener("click", () => {
   document.getElementById("mobileNav").classList.toggle("open");
 });
 
-// Build quote message
-function buildQuoteMessage() {
+// Open modal
+document.getElementById("openQuoteModal").addEventListener("click", () => {
+  const listEl = document.getElementById("selectedList");
+  const customText = document.getElementById("customDetails").value.trim();
+
+  let html = "<strong>Selected Equipment:</strong><ul>";
+  selectedItems.forEach(item => {
+    html += `<li>${item.name}</li>`;
+  });
+  html += "</ul>";
+
+  if (customText) {
+    html += `<p style="margin-top:12px"><strong>Additional requirements:</strong><br>${customText}</p>`;
+  }
+
+  listEl.innerHTML = html;
+  document.getElementById("quoteModal").classList.add("open");
+});
+
+// Close modal
+document.getElementById("closeModal").addEventListener("click", () => {
+  document.getElementById("quoteModal").classList.remove("open");
+});
+
+// Build final message
+function buildMessage() {
   const name = document.getElementById("qName").value.trim();
   const company = document.getElementById("qCompany").value.trim();
   const phone = document.getElementById("qPhone").value.trim();
   const email = document.getElementById("qEmail").value.trim();
   const location = document.getElementById("qLocation").value.trim();
-  const details = document.getElementById("qDetails").value.trim();
+  const custom = document.getElementById("customDetails").value.trim();
 
   let message = `NEW QUOTATION REQUEST - ToolHub\n\n`;
   message += `Name: ${name}\n`;
   if (company) message += `Company: ${company}\n`;
   message += `Phone: ${phone}\n`;
   if (email) message += `Email: ${email}\n`;
-  if (location) message += `Delivery Location: ${location}\n`;
-  message += `\nEquipment Required:\n${details}\n\n`;
-  message += `Please provide a quotation. Thank you.`;
+  if (location) message += `Delivery Location: ${location}\n\n`;
 
+  message += `EQUIPMENT REQUIRED:\n`;
+  selectedItems.forEach((item, i) => {
+    message += `${i + 1}. ${item.name}\n`;
+  });
+
+  if (custom) {
+    message += `\nAdditional requirements:\n${custom}\n`;
+  }
+
+  message += `\nPlease provide a quotation. Thank you.`;
   return message;
 }
 
-// WhatsApp button
-document.getElementById("sendWhatsApp").addEventListener("click", () => {
-  const form = document.getElementById("quoteForm");
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
+// Validation
+function validateForm() {
+  const name = document.getElementById("qName").value.trim();
+  const phone = document.getElementById("qPhone").value.trim();
+  if (!name || !phone) {
+    alert("Please fill in your Name and Phone number.");
+    return false;
   }
-  const message = buildQuoteMessage();
+  if (selectedItems.length === 0 && !document.getElementById("customDetails").value.trim()) {
+    alert("Please add at least one item or describe what you need.");
+    return false;
+  }
+  return true;
+}
+
+// WhatsApp
+document.getElementById("sendWhatsApp").addEventListener("click", () => {
+  if (!validateForm()) return;
+  const message = buildMessage();
   const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
 
-// Email button
+// Email
 document.getElementById("sendEmail").addEventListener("click", () => {
-  const form = document.getElementById("quoteForm");
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-  const message = buildQuoteMessage();
+  if (!validateForm()) return;
+  const message = buildMessage();
   const subject = encodeURIComponent("New Quotation Request – ToolHub");
   const body = encodeURIComponent(message);
   window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
