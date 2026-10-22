@@ -54,7 +54,6 @@ const products = [
   { id: 904, name: "Screwdrivers, Pliers & Hammers", category: "manual", description: "Brands: Stanley, Wera, Knipex, Gedore and Mac Afric. Full range of hand tools.", image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" }
 ];
 
-// ==================== APP LOGIC (do not change) ====================
 const whatsappNumber = "27642448154";
 const emailAddress = "nexusequipmentgroup@gmail.com";
 
@@ -211,17 +210,35 @@ function validateForm() {
   return true;
 }
 
+// WhatsApp button
 document.getElementById("sendWhatsApp").addEventListener("click", () => {
   if (!validateForm()) return;
   const message = buildMessage();
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
 });
 
+// FIXED Email button
 document.getElementById("sendEmail").addEventListener("click", () => {
   if (!validateForm()) return;
+
   const message = buildMessage();
   const subject = "New Quotation Request – ToolHub";
-  window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+  // Try to open email app
+  const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+  
+  // Create a temporary link and click it (more reliable on mobile)
+  const link = document.createElement('a');
+  link.href = mailtoLink;
+  link.target = '_blank';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // Fallback message
+  setTimeout(() => {
+    alert("If your email app did not open, the message has been prepared. You can also copy it manually and send it to:\n\nnexusequipmentgroup@gmail.com");
+  }, 1000);
 });
 
 renderProducts();
