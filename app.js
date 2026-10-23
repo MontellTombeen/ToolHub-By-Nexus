@@ -21,7 +21,7 @@ const products = [
   { id: 401, name: "Trolley Jacks & Bottle Jacks", category: "garage", description: "Long reach trolley jacks 2–11 ton and bottle jacks up to 30 ton.", image: "https://images.unsplash.com/photo-1578583444045-69c6e71c520b?w=800&h=500&fit=crop" },
   { id: 402, name: "Jack Stands & Engine Cranes", category: "garage", description: "Ratchet jack stands 3–12 ton and foldable engine cranes.", image: "https://images.unsplash.com/photo-1578583444045-69c6e71c520b?w=800&h=500&fit=crop" },
   { id: 403, name: "Vehicle Lifts (2-Post & 4-Post)", category: "garage", description: "4-ton 2-post and 5-ton 4-post lifts.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
-  { id: 404, name: "Workshop Presses", category: "garage", description: "Hydraulic workshop presses 12–100 ton.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
+  { id: 404, name: "Workshop Presses", category: "garage", description: "Hydraulic workshop presses 12–100 ton. 20 ton models available.", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=500&fit=crop" },
   { id: 405, name: "Tyre Changers & Wheel Balancers", category: "garage", description: "Pneumatic tyre changers and wheel balancers.", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop" },
 
   // ==================== GENERATORS & PUMPS ====================
@@ -34,23 +34,23 @@ const products = [
   { id: 601, name: "Cordless Drills & Impact Drivers", category: "power", description: "Makita, Kinway, Mac Afric. 18V & 20V brushless.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
   { id: 602, name: "Angle Grinders", category: "power", description: "Bosch, Mac Afric, Kinway. 115mm–230mm.", image: "https://images.unsplash.com/photo-1738162837369-a2beec3a1d47?w=800&h=500&fit=crop" },
   { id: 603, name: "Impact Wrenches", category: "power", description: "Cordless and air impact wrenches up to 1000Nm.", image: "https://images.unsplash.com/photo-1764015805414-df7de89d405b?w=800&h=500&fit=crop" },
-  { id: 604, name: "Circular Saws & Reciprocating Saws", category: "power", description: "Corded and cordless circular and recip saws.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
+  { id: 604, name: "Circular Saws & Reciprocating Saws", category: "power", description: "Corded and cordless circular saws and reciprocating saws.", image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=500&fit=crop" },
 
   // ==================== PNEUMATIC / AIR TOOLS ====================
   { id: 701, name: "Air Compressors (50L – 200L)", category: "pneumatic", description: "Fini and other brands. 50L–200L tanks.", image: "https://images.unsplash.com/photo-1655165312002-9d781ad4046e?w=800&h=500&fit=crop" },
   { id: 702, name: "Pneumatic Impact Wrenches & Ratchets", category: "pneumatic", description: "Air impact wrenches and ratchets.", image: "https://images.unsplash.com/photo-1764015805414-df7de89d405b?w=800&h=500&fit=crop" },
-  { id: 703, name: "Spray Guns (HVLP & LVLP)", category: "pneumatic", description: "Professional gravity feed spray guns.", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop" },
+  { id: 703, name: "Spray Guns (HVLP & LVLP)", category: "pneumatic", description: "Professional gravity feed spray guns. Multiple nozzle sizes.", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop" },
   { id: 704, name: "Air Die Grinders & Kits", category: "pneumatic", description: "Die grinder kits and air tools.", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&h=500&fit=crop" },
 
   // ==================== STORAGE ====================
-  { id: 801, name: "Tool Cabinets (7-Drawer & more)", category: "storage", description: "Professional tool cabinets. Mac Afric and others.", image: "https://images.unsplash.com/photo-1426927308491-6380b6a9936f?w=800&h=500&fit=crop" },
+  { id: 801, name: "Tool Cabinets (7-Drawer & more)", category: "storage", description: "Professional tool cabinets. Mac Afric and other brands.", image: "https://images.unsplash.com/photo-1426927308491-6380b6a9936f?w=800&h=500&fit=crop" },
   { id: 802, name: "Fully Loaded Tool Cabinets", category: "storage", description: "Complete tool sets in heavy-duty cabinets.", image: "https://images.unsplash.com/photo-1426927308491-6380b6a9936f?w=800&h=500&fit=crop" },
-  { id: 803, name: "Jobsite Toolboxes & Cantilever Boxes", category: "storage", description: "Large jobsite toolboxes and cantilever boxes.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
+  { id: 803, name: "Jobsite Toolboxes & Cantilever Boxes", category: "storage", description: "Large jobsite toolboxes and multi-tray cantilever boxes.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
 
   // ==================== HAND TOOLS ====================
   { id: 901, name: "Torque Wrenches", category: "manual", description: "Click-type torque wrenches. Multiple drive sizes.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
-  { id: 902, name: "Socket Sets", category: "manual", description: "Professional socket sets 25–172 pieces.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
-  { id: 903, name: "Spanner Sets", category: "manual", description: "Metric and imperial combination spanner sets.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
+  { id: 902, name: "Socket Sets", category: "manual", description: "Professional socket sets from 25 to 172 pieces.", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
+  { id: 903, name: "Spanner Sets", category: "manual", description: "Metric and imperial combination spanner sets (ring + open ended).", image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop" },
   { id: 904, name: "Screwdrivers, Pliers & Hammers", category: "manual", description: "Stanley, Wera, Knipex, Gedore, Mac Afric.", image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&h=500&fit=crop" }
 ];
 
